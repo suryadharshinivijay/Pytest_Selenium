@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "product_name" : "Brocolli - 1 Kg",
+      "quantity"     : "3"
+    },
+    {
+      "product_name" : "Cauliflower - 1 Kg",
+      "quantity"     : "2"
+    }
+  ]
+}
