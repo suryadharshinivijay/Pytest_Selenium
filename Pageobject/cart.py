@@ -13,7 +13,7 @@ class Cart(BrowserUtils):
         self.promo_button = (By.CSS_SELECTOR, '.promoBtn')
         self.promo_button2 = (By.CSS_SELECTOR, '.promoInfo')
         self.order_button = (By.XPATH,"//button[normalize-space()='Place Order']")
-
+        self.country_page = (By.XPATH,"//div[@class='wrapperTwo']")    
     def cart_page(self,promo_code):
         self.driver.find_element(*self.promo_text).send_keys(promo_code)
         self.driver.find_element(*self.promo_button).click()
@@ -24,6 +24,9 @@ class Cart(BrowserUtils):
 
     def order_page(self):
         order_placed= self.driver.find_element(*self.order_button).click()
+        checkout_confirm= self.driver.find_element(*self.country_page).click()
+        assert (checkout_confirm.is_displayed())
+
 
     def get_title(self):
         return self.driver.title
